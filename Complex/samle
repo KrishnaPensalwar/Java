@@ -1,0 +1,141 @@
+import java.util.Scanner;
+
+public class Complex {
+
+
+    private float real1,img1,real2,img2,real3,img3,real4,img4,real5,img5,real6,img6;
+
+    public Complex()
+    {
+        Scanner sc= new Scanner(System.in);
+
+        System.out.println("Enter the first complex number:");
+        real1=sc.nextInt();
+        img1= sc.nextInt();
+//
+        System.out.println("Enter the second complex number:");
+        real2=sc.nextInt();
+        img2 = sc.nextInt();
+
+    }
+
+    public void add()
+    {
+        real3 = real1 + real2;
+        img3 =  img1 +img2;
+    }
+
+    public void sub()
+
+    {
+        real4 = real1 - real2;
+        img4 =  img1 - img2;
+    }
+
+    public void mul()
+    {
+        real5 = (real1*real2)-(img1*img2);
+        img5 = (real1*img2)+(real2*img1);
+    }
+
+    public void div()
+    {
+        real6 = ((real1*real2)+(img1*img2))/((real2*real2)+(img2*img2));
+        img6 = ((img1*real2)-(real1*img2))/((real2*real2)+(img2*img2));
+    }
+
+    public void adddisplay() {
+        System.out.println("Addition of the two complex numbers is:" + real3 + "+" + img3 + "i");
+    }
+    public void subdisplay() {
+        System.out.println("Subtraction of the two complex numbers is:" + real4 + "+" + img4 + "i");
+    }
+    public void muldisplay() {
+        System.out.println("Multiplication of the two complex numbers is:" + real5+ "+" + img5+ "i");
+    }
+    public void divdisplay(){
+    System.out.println("Division of the two complex numbers is:"+real6+"+"+img6+"i");
+    }
+
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+
+    {
+        Complex obj = new Complex();
+
+        int n;
+
+        System.out.println("1.Addition");
+        System.out.println("2.Subtraction");
+        System.out.println("3.Multiplication");
+        System.out.println("4.Division");
+
+        System.out.println("Enter the operation no. you want to do:");
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        switch (n)
+        {
+            case 1:
+                obj.add();
+                obj.adddisplay();
+                break;
+            case 2:
+                obj.sub();
+                obj.subdisplay();
+                break;
+            case 3:
+                obj.mul();
+                obj.muldisplay();
+                break;
+            case 4:
+                obj.div();
+                obj.divdisplay();
+                break;
+            default:
+                System.out.println("Enter Valid Input!!!");
+
+        }
+    }
+}
+// *********OUTPUT********
+//Enter the first complex number:
+//        1
+//        2
+//        Enter the second complex number:
+//        3
+//        4
+//        1.Addition
+//        2.Subtraction
+//        3.Multiplication
+//        4.Division
+//        Enter the operation no. you want to do:
+//        1
+//        Addition of the two complex numbers is:4.0+6.0i
+//        Enter the operation no. you want to do:
+//        2
+//        Subtraction of the two complex numbers is:-2.0+-2.0i
+//        Enter the operation no. you want to do:
+//        3
+//        Multiplication of the two complex numbers is:-5.0+10.0i
+//        Enter the operation no. you want to do:
+//        4
+//        Division of the two complex numbers is:0.44+0.08i
+//        Enter the operation no. you want to do:
+//        5
+//        Enter Valid Input!!!
+
+
+
+
+
+
